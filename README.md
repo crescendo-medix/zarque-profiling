@@ -18,14 +18,30 @@ Zarque-profiling has the same features, analysis items, and output reports as Pa
 
 ### Powered by Polars
 
-Zarque-profiling is based on pandas-profiling (ydata-profiling) and uses Polars instead of Pandas to speed up the analysis process.
+Zarque-profiling is based on pandas-profiling (ydata-profiling) and uses Polars instead of Pandas to speed up the analysis process.  
+
+###  Use cases
+
+- Profiling large datasets as a standalone package  
+  Profiling of large data sets that Pandas-profiling is too time consuming to handle.  
+  Data profiling when Polars is used for data analytics and data science.  
+- Seamless integration with existing packages  
+- EDA (Exploratory Data Analysis)  
+  Simple data analysis without writing code. (histograms, scatter plots, heat maps, text analysis)  
+- Comparing multiple version of the same dataset (profiling reports)  
+  Compare data before and after data wranglin.  
+  Compare training data with evaluation data by machine learning.  
+- Data preparation/Data migration solution business  
+  Estimation of man-hours required.  
+  Help to create data specification.  
+  Determine if dataset should be migrated or not.  
+
 
 ***
 
 ### Benchmark
 
-The figure below shows the benchmark results of data acquisition and analysis processing time for 1 million to 100 million rows in minimal profiling (minimal=True).  
-This data is for reference only. Processing times vary depending on the performance of the PC used and the amount of memory.  
+The figure below shows the benchmark results of data acquisition and analysis processing time for 1 million to 100 million rows in minimal profiling (minimal=True). This data is for reference only. Processing times vary depending on the performance of the PC used and the amount of memory.  
 
 ![Benchmark](https://user-images.githubusercontent.com/132550577/236175318-f7f34294-b7cd-48ab-b13b-acfc4cc3e442.png)
 
