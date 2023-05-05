@@ -1,8 +1,10 @@
 [![PyPI version](https://badge.fury.io/py/zarque-profiling.svg)](https://badge.fury.io/py/zarque-profiling)
 ![Python Versions](https://img.shields.io/pypi/pyversions/zarque-profiling.svg)
-[![PyPI download month](https://img.shields.io/pypi/dm/zarque-profiling.svg)](https://pypi.python.org/pypi/zarque-profiling/)
 ![PyPI - Status](https://img.shields.io/pypi/status/zarque-profiling)
 ![GitHub](https://img.shields.io/github/license/crescendo-medix/zarque-profiling)
+[![Downloads](https://static.pepy.tech/badge/zarque-profiling)](https://pepy.tech/project/zarque-profiling)
+[![Downloads](https://static.pepy.tech/badge/zarque-profiling/month)](https://pepy.tech/project/zarque-profiling)
+[![Downloads](https://static.pepy.tech/badge/zarque-profiling/week)](https://pepy.tech/project/zarque-profiling)
 
 # Zarque-profiling : 3x faster data profiling tools for Big Data
 
