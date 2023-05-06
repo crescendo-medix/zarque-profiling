@@ -45,7 +45,9 @@ Zarque-profiling is based on pandas-profiling (ydata-profiling) and uses Polars 
 
 The figure below shows the benchmark results of data acquisition and analysis processing time for 1 million to 100 million rows in minimal profiling (minimal=True). This data is for reference only. Processing times vary depending on the performance of the PC used and the amount of memory.  
 
-![Benchmark](https://user-images.githubusercontent.com/132550577/236175318-f7f34294-b7cd-48ab-b13b-acfc4cc3e442.png)
+<p align="center">
+<img width="600" src="https://user-images.githubusercontent.com/132550577/236175318-f7f34294-b7cd-48ab-b13b-acfc4cc3e442.png">
+</p>
 
 ***
 
