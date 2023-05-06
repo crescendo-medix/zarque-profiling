@@ -7,10 +7,8 @@
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling/week)](https://pepy.tech/project/zarque-profiling)
 
 <p align="center">
-<img width="200" src="https://user-images.githubusercontent.com/132550577/236601783-4525e0a0-aa30-4b18-9e2c-13ef8cebeb77.png">
+<img width="800" src="https://user-images.githubusercontent.com/132550577/236602881-83d833df-01bc-4012-a42e-11d93846bbfa.png" alt="Zarque-profiling">
 </p>
-
-# Zarque-profiling : 3x faster data profiling tools for Big Data
 
 Zarque-profiling is a data profiling tool that is 3x faster than Pandas-profiling. Zarque-profiling offers a new option for your big data profiling needs. 
 
@@ -50,7 +48,7 @@ Zarque-profiling is based on pandas-profiling (ydata-profiling) and uses Polars 
 The figure below shows the benchmark results of data acquisition and analysis processing time for 1 million to 100 million rows in minimal profiling (minimal=True). This data is for reference only. Processing times vary depending on the performance of the PC used and the amount of memory.  
 
 <p align="center">
-<img width="600" src="https://user-images.githubusercontent.com/132550577/236175318-f7f34294-b7cd-48ab-b13b-acfc4cc3e442.png">
+<img width="800" src="https://user-images.githubusercontent.com/132550577/236175318-f7f34294-b7cd-48ab-b13b-acfc4cc3e442.png">
 </p>
 
 ***
