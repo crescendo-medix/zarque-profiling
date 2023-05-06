@@ -6,6 +6,10 @@
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling/month)](https://pepy.tech/project/zarque-profiling)
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling/week)](https://pepy.tech/project/zarque-profiling)
 
+<p align="center">
+<img width="200" src="https://user-images.githubusercontent.com/132550577/236601783-4525e0a0-aa30-4b18-9e2c-13ef8cebeb77.png">
+</p>
+
 # Zarque-profiling : 3x faster data profiling tools for Big Data
 
 Zarque-profiling is a data profiling tool that is 3x faster than Pandas-profiling. Zarque-profiling offers a new option for your big data profiling needs. 
