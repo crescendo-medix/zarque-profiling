@@ -1,0 +1,26 @@
+# Requirements
+include requirements.txt
+
+# Include license, Readme, etc.
+include LICENSE
+include *.md
+include mypy.ini
+include src/zarque_profiling/py.typed
+
+# Templates and static resources
+recursive-include src/zarque_profiling/report/presentation/flavours/html/templates *.html *.js *.css
+
+# Configuration
+include src/zarque_profiling/*.yaml
+
+# Exclude development, docs, testing and example code
+exclude .pre-commit-config.yaml
+exclude commitlint.config.js
+exclude .releaserc.json
+include Makefile make.bat
+exclude docs examples tests docsrc .devcontainer
+recursive-exclude docs *
+recursive-exclude docsrc *
+recursive-exclude examples *
+recursive-exclude tests *
+recursive-exclude .devcontainer *
