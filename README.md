@@ -33,7 +33,7 @@ Zarque-profiling is based on pandas-profiling (ydata-profiling) and uses Polars 
 - EDA (Exploratory Data Analysis)  
   Simple data analysis without writing code. (histograms, scatter plots, heat maps, text analysis)  
 - Comparing multiple version of the same dataset (profiling reports)  
-  Compare data before and after data wranglin.  
+  Compare data before and after data wrangling.  
   Compare training data with evaluation data by machine learning.  
 - Data preparation/Data migration solution business  
   Estimation of man-hours required.  
