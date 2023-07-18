@@ -1,3 +1,4 @@
+<!--
 [![PyPI version](https://badge.fury.io/py/zarque-profiling.svg)](https://badge.fury.io/py/zarque-profiling)
 ![Python Versions](https://img.shields.io/pypi/pyversions/zarque-profiling.svg)
 ![PyPI - Status](https://img.shields.io/pypi/status/zarque-profiling)
@@ -5,10 +6,16 @@
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling)](https://pepy.tech/project/zarque-profiling)
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling/month)](https://pepy.tech/project/zarque-profiling)
 [![Downloads](https://static.pepy.tech/badge/zarque-profiling/week)](https://pepy.tech/project/zarque-profiling)
+-->
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/132550577/236653863-ccf98580-4a6f-46ba-abde-d3e20a87b354.png" alt="Zarque-profiling">
 </p>
+
+[![PyPI version](https://badge.fury.io/py/zarque-profiling.svg)](https://badge.fury.io/py/zarque-profiling)
+![Python Versions](https://img.shields.io/pypi/pyversions/zarque-profiling.svg)
+[![Downloads](https://static.pepy.tech/badge/zarque-profiling)](https://pepy.tech/project/zarque-profiling)
+![GitHub](https://img.shields.io/github/license/crescendo-medix/zarque-profiling)
 
 Zarque-profiling is a data profiling tool that is 3x faster than Pandas-profiling. Zarque-profiling offers a new option for your big data profiling needs. 
 
@@ -142,6 +149,18 @@ Text analysis (length distribution, word distribution and character information)
 ProfileReport(
     df,
     vars={"cat": {"length": True, "words": True, "characters": True}}
+)
+```
+
+Change matplotlib Font-family.  
+If Japanese column names are used, change the default font to a font that can display Japanese.
+>*The following code is an example of setting up an IPAex font (Japanese fonts).*
+
+```py
+ProfileReport(
+    df,
+    minimal=False,
+    font_family="IPAexGothic"
 )
 ```
 
