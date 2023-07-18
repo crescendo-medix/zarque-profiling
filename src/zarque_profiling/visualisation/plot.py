@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import polars as pol
+import matplotlib
 from matplotlib import pyplot as plt
 from matplotlib.collections import PolyCollection
 from matplotlib.colors import Colormap, LinearSegmentedColormap, ListedColormap, rgb2hex
@@ -117,8 +118,11 @@ def histogram(
 
     Returns:
       The resulting histogram encoded as a string.
-
+    
     """
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+    
     plot = _plot_histogram(config, series, bins, date=date, figsize=(7, 3))
     plot.xaxis.set_tick_params(rotation=90 if date else 45)
     plot.figure.tight_layout()
@@ -142,6 +146,9 @@ def mini_histogram(
     Returns:
       The resulting mini histogram encoded as a string.
     """
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     plot = _plot_histogram(
         config, series, bins, figsize=(3, 2.25), date=date, hide_yaxis=True
     )
@@ -211,6 +218,8 @@ def correlation_matrix(config: Settings, data: pd.DataFrame, vmin: int = -1) -> 
       The resulting correlation matrix encoded as a string.
     """
 
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     if isinstance(data, pol.DataFrame):
         data = data.to_pandas()
 
@@ -263,6 +272,9 @@ def scatter_complex(config: Settings, series: pd.Series) -> str:
     Returns:
         A string containing (a reference to) the image
     """
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     plt.ylabel("Imaginary")
     plt.xlabel("Real")
 
@@ -295,6 +307,9 @@ def scatter_series(
     Returns:
         A string containing (a reference to) the image
     """
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     plt.xlabel(x_label)
     plt.ylabel(y_label)
 
@@ -335,7 +350,9 @@ def scatter_pairwise(
         series1 = series1.to_pandas()
     if isinstance(series2, pol.Series):
         series2 = series2.to_pandas()
-    
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     plt.xlabel(x_label)
     plt.ylabel(y_label)
 
@@ -489,6 +506,8 @@ def cat_frequency_plot(
         colors = multiplier * colors  # repeat colors as required
         colors = colors[0 : len(data)]  # select the exact number of colors required
 
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     # Create the plot
     plot_type = config.plot.cat_freq.type
     if plot_type == "bar":
@@ -568,6 +587,9 @@ def mini_ts_plot(config: Settings, series: Union[list, pd.Series]) -> str:
     Returns:
       The resulting timeseries plot encoded as a string.
     """
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     plot = _plot_timeseries(config, series, figsize=(3, 2.25))
     plot.xaxis.set_tick_params(rotation=45)
     plt.rc("ytick", labelsize=3)
@@ -667,6 +689,9 @@ def _plot_acf_pacf_comparison(
 def plot_acf_pacf(
     config: Settings, series: Union[list, pd.Series], figsize: tuple = (15, 5)
 ) -> str:
+
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     if isinstance(series, list):
         return _plot_acf_pacf_comparison(config, series, figsize)
     else:
@@ -986,3 +1011,4 @@ def missing_heatmap(
             text.set_text(round(t, 1))
 
     return ax
+
