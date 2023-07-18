@@ -338,6 +338,9 @@ class Settings(BaseSettings):
     html: Html = Html()
     notebook = Notebook()
 
+    # Matplotlib Font-family   Note: If Japanese column names are used, change the default font to a font that can display Japanese.
+    font_family: str = "sans-serif"   # default font
+
     def update(self, updates: dict) -> "Settings":
         update = _merge_dictionaries(self.dict(), updates)
         return self.parse_obj(self.copy(update=update))
