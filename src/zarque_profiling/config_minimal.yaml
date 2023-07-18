@@ -215,3 +215,8 @@ html:
       - "#4daf4a"
 
     full_width: false
+
+# Matplotlib Font-family   Note: If Japanese column names are used, change the default font to a font that can display Japanese.
+font_family: "sans-serif"   # default font
+
+    
