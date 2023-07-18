@@ -1,6 +1,7 @@
 """Plotting functions for the missing values diagrams"""
 import pandas as pd
 from matplotlib import pyplot as plt
+import matplotlib
 
 from zarque_profiling.config import Settings
 from zarque_profiling.visualisation.context import manage_matplotlib_context
@@ -48,6 +49,8 @@ def plot_missing_matrix(config: Settings, data: pd.DataFrame) -> str:
         The resulting missing values matrix encoded as a string.
     """
 
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     missing_matrix(
         data,
         figsize=(10, 4),
@@ -70,6 +73,9 @@ def plot_missing_bar(config: Settings, data: pd.DataFrame) -> str:
     Returns:
         The resulting missing values bar plot encoded as a string.
     """
+    
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
+
     missing_bar(
         data,
         figsize=(10, 5),
@@ -95,6 +101,8 @@ def plot_missing_heatmap(config: Settings, data: pd.DataFrame) -> str:
     Returns:
         The resulting missing values heatmap plot encoded as a string.
     """
+    
+    matplotlib.rcParams['font.family'] = config.font_family   # Change Matplotlib Font-family
 
     height = 4
     if len(data.columns) > 10:
