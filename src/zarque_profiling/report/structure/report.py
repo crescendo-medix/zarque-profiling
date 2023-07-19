@@ -307,7 +307,8 @@ def get_interactions(config: Settings, interactions: dict) -> list:
                         splot,
                         image_format=config.plot.image_format,
                         alt=f"{x_col} x {y_col}",
-                        anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                        # anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                        anchor_id=f"interactions_{slugify(x_col, True)}_{slugify(y_col, True)}",   # allow_unicode = True
                         name=y_col,
                     )
                 )
@@ -319,7 +320,8 @@ def get_interactions(config: Settings, interactions: dict) -> list:
                                 zplot,
                                 image_format=config.plot.image_format,
                                 alt=f"{x_col} x {y_col}",
-                                anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                                # anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                                anchor_id=f"interactions_{slugify(x_col, True)}_{slugify(y_col, True)}",   # allow_unicode = True
                                 name=config.html.style._labels[idx],
                             )
                             if zplot != ""
@@ -331,7 +333,8 @@ def get_interactions(config: Settings, interactions: dict) -> list:
                         ],
                         sequence_type="batch_grid",
                         batch_size=len(config.html.style._labels),
-                        anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                        # anchor_id=f"interactions_{slugify(x_col)}_{slugify(y_col)}",
+                        anchor_id=f"interactions_{slugify(x_col, True)}_{slugify(y_col, True)}",   # allow_unicode = True
                         name=y_col,
                     )
                 )
@@ -342,7 +345,8 @@ def get_interactions(config: Settings, interactions: dict) -> list:
                 sequence_type="tabs" if len(items) <= 10 else "select",
                 name=x_col,
                 nested=len(interactions) > 10,
-                anchor_id=f"interactions_{slugify(x_col)}",
+                # anchor_id=f"interactions_{slugify(x_col)}",
+                anchor_id=f"interactions_{slugify(x_col, True)}",   # allow_unicode = True
             )
         )
     return titems
@@ -452,3 +456,4 @@ def get_report_structure(config: Settings, summary: dict) -> Root:
     )
 
     return Root("Root", sections, footer, style=config.html.style)
+
