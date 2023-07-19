@@ -108,7 +108,7 @@ Exporting the report to a file.
 # As a HTML file
 report.to_file("path/file_name.html")
 # As a JSON file
-report.to_json("path/file_name.json")
+report.to_file("path/file_name.json")
 ```
 
 Compare 2 profiling reports.  
