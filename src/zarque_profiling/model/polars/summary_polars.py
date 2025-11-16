@@ -1,4 +1,4 @@
-"""Compute statistical description of datasets."""
+"Compute statistical description of datasets."""
 
 import multiprocessing
 import multiprocessing.pool
@@ -66,6 +66,7 @@ def polars_describe_1d(
             "UInt64": "Numeric",
             "Utf8": "Categorical",
             "Categorical": "Categorical",
+            "String": "Categorical",
             "ArrayType": "Categorical",
             "Boolean": "Boolean",
             "Date": "DateTime",
