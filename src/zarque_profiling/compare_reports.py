@@ -12,17 +12,14 @@ from zarque_profiling.profile_report import ProfileReport
 def _should_wrap(v1: Any, v2: Any) -> bool:
     if isinstance(v1, (list, dict)):
         return False
-
-    if isinstance(v1, pol.DataFrame) and isinstance(v2, pol.DataFrame):
-        return v1.frame_equal(v2)
-    if isinstance(v1, pd.DataFrame) and isinstance(v2, pd.DataFrame):
+    if isinstance(v1, pol.DataFrame) & isinstance(v2, pol.DataFrame):
         return v1.equals(v2)
-
-    if isinstance(v1, pol.Series) and isinstance(v2, pol.Series):
-        return v1.series_equal(v2)
-    if isinstance(v1, pd.Series) and isinstance(v2, pd.Series):
+    if isinstance(v1, pd.DataFrame) & isinstance(v2, pd.DataFrame):
         return v1.equals(v2)
-
+    if isinstance(v1, pol.Series) & isinstance(v2, pol.Series):
+        return v1.equals(v2)
+    if isinstance(v1, pd.Series) & isinstance(v2, pd.Series):
+        return v1.equals(v2)
     try:
         return v1 == v2
     except ValueError:
@@ -324,3 +321,4 @@ def compare(
     profile._description_set = res
 
     return profile
+
