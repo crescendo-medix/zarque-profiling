@@ -384,7 +384,9 @@ def _plot_stacked_barh(
     """
 
     if isinstance(data, pol.DataFrame):
-        data = pd.Series(data.get_column("counts"), index=data.get_columns()[0])
+        #data = pd.Series(data.get_column("counts"), index=data.get_columns()[0])
+        data = pd.Series(data.get_column("count"), index=data.get_columns()[0])
+
 
     # Use the pd.Series indices as category names
     labels = data.index.values.astype(str)
@@ -730,7 +732,7 @@ def _prepare_heatmap_data(
         df[sortbykey], bins=nbins, include_lowest=True, labels=range(nbins)
     )
 
-    df = df.groupby([entity_column, "__bins"])[sortbykey].count()
+    df = df.group_by([entity_column, "__bins"])[sortbykey].count()
     df = df.reset_index().pivot(entity_column, "__bins", sortbykey).T
     if selected_entities:
         df = df[selected_entities].T
