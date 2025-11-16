@@ -1,6 +1,9 @@
 from typing import Tuple
 
 import polars as pol
+from typing import Tuple
+
+import polars as pol
 
 from zarque_profiling.config import Settings
 from zarque_profiling.model.summary_algorithms import describe_counts
@@ -31,7 +34,8 @@ def polars_describe_counts(
     summary["hashable"] = hashable
 
     if hashable:        
-        value_counts_with_nan = value_counts_with_nan.filter(pol.col("counts") > 0)
+        #value_counts_with_nan = value_counts_with_nan.filter(pol.col("counts") > 0)
+        value_counts_with_nan = value_counts_with_nan.filter(pol.col("count") > 0)
         null_index = value_counts_with_nan.get_columns()[0].is_null()
         if null_index.any():
             n_missing = value_counts_with_nan.filter(null_index).get_columns()[1].sum()
