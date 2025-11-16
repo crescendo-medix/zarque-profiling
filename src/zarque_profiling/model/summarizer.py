@@ -93,7 +93,8 @@ def format_summary(summary: dict) -> dict:
                 and len(v) == 2
                 and all(isinstance(x, np.ndarray) for x in v)
             ):
-                return {"counts": v[0].tolist(), "bin_edges": v[1].tolist()}
+                #return {"counts": v[0].tolist(), "bin_edges": v[1].tolist()}
+                return {"count": v[0].tolist(), "bin_edges": v[1].tolist()}
             else:
                 return v
 
