@@ -1,4 +1,4 @@
-from typing import Tuple
+from typing imfrom typing import Tuple
 
 import polars as pol
 
@@ -28,7 +28,8 @@ def polars_describe_supported(
     value_counts = series_description["value_counts_without_nan"]
     distinct_count = len(value_counts)
     #unique_count = value_counts.where(value_counts == 1).count()
-    unique_count = len(value_counts["counts"] == 1)    # TODO unique_count OK?
+    #unique_count = len(value_counts["counts"] == 1)    # TODO unique_count OK?
+    unique_count = len(value_counts["count"] == 1)    # TODO unique_count OK?
 
     stats = {
         "n_distinct": distinct_count,
