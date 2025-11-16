@@ -190,9 +190,11 @@ def word_summary_vc(vc: pol.Series, stop_words: List[str] = []) -> dict:
 
 def length_summary_vc(vc: pol.Series) -> dict:
     series = pol.Series(vc.drop_nulls().get_columns()[0])
-    length = series.str.lengths()
+    #length = series.str.lengths()
+    length = series.str.len_chars()
     length_counts = pol.DataFrame([length, vc.drop_nulls().get_columns()[1]])
-    length_counts = length_counts.groupby("column_0").sum()
+    #length_counts = length_counts.groupby("column_0").sum()
+    length_counts = length_counts.group_by("count").sum()
     #length_counts = length_counts.sort("column_0", reverse=True)
     length_counts = pd.Series(length_counts.get_columns()[1], index=length_counts.get_columns()[0])  
     length_counts = length_counts.sort_values(ascending=False)
