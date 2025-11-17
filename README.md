@@ -167,3 +167,7 @@ ProfileReport(
 ### License
 
 - MIT license  
+
+### Update
+
+- 0.5.17  Library version upgrade. See requirements.txt
